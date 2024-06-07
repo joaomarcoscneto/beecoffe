@@ -14,5 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('appointments');
 });
+
+Route::resource('doctors', DoctorController::class);
+Route::resource('patients', PatientController::class);
+Route::resource('appointments', AppointmentController::class);
